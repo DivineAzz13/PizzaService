@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Pizza</title>
+</head>
+
+<body>
+  <div class="popup-window popup-window--hidden" id="filter-popup-window">
+    <div class="popup popup--hidden popup-window__popup popup-window__popup--aside" id="filter-popup">
+      <button class="popup__close-btn"">
+        <svg width=" 24" height="24">
+        <use xlink:href="./assets/icons/close-btn.svg#close-btn"></use>
+        </svg>
+      </button>
+      <form class="popup-form popup__form popup__filter-form" id="filter-form">
+        <div class="popup-form__wrapper">
+          <h4 class="popup__heading">Фильтры</h4>
+          <fieldset class="popup-form__fieldset">
+            <h6 class="popup-form__fieldset-heading">Общее</h6>
+            <div class="popup-form__inputs-group">
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Хит" checked>
+                <div class="popup-form__input-btn">
+                  Хит
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Новинка">
+                <div class="popup-form__input-btn">
+                  Новинка
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="С мясом">
+                <div class="popup-form__input-btn">
+                  С мясом
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Вегетареанская">
+                <div class="popup-form__input-btn">
+                  Вегетареанская
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="С курицей">
+                <div class="popup-form__input-btn">
+                  С курицей
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="С грибами">
+                <div class="popup-form__input-btn">
+                  Без лука
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Без лука">
+                <div class="popup-form__input-btn">
+                  С грибами
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="С морепродуктами">
+                <div class="popup-form__input-btn">
+                  С морепродуктами
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Барбекью">
+                <div class="popup-form__input-btn">
+                  Барбекью
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="popup-form__fieldset">
+            <h6 class="popup-form__fieldset-heading">Сыр</h6>
+            <div class="popup-form__inputs-group">
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Реджанито">
+                <div class="popup-form__input-btn">
+                  Реджанито
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Моцарелла">
+                <div class="popup-form__input-btn">
+                  Моцарелла
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Чеддер">
+                <div class="popup-form__input-btn">
+                  Чеддер
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="С голубой плесенью">
+                <div class="popup-form__input-btn">
+                  С голубой плесенью
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Смесь итальянских сыров">
+                <div class="popup-form__input-btn">
+                  Смесь итальянских сыров
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Мягкий молодой сыр">
+                <div class="popup-form__input-btn">
+                  Мягкий молодой сыр
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="popup-form__fieldset">
+            <h6 class="popup-form__fieldset-heading">Мясо</h6>
+            <div class="popup-form__inputs-group">
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Пепперони">
+                <div class="popup-form__input-btn">
+                  Пепперони
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Свинина">
+                <div class="popup-form__input-btn">
+                  Свинина
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Ветчина">
+                <div class="popup-form__input-btn">
+                  Ветчина
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Бекон">
+                <div class="popup-form__input-btn">
+                  Бекон
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Говядина">
+                <div class="popup-form__input-btn">
+                  Говядина
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Чоризо">
+                <div class="popup-form__input-btn">
+                  Чоризо
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Колбаски">
+                <div class="popup-form__input-btn">
+                  Колбаски
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Куриная грудка">
+                <div class="popup-form__input-btn">
+                  Куриная грудка
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="popup-form__fieldset">
+            <h6 class="popup-form__fieldset-heading">Компоненты</h6>
+            <div class="popup-form__inputs-group">
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Креветка">
+                <div class="popup-form__input-btn">
+                  Креветка
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Ананасы">
+                <div class="popup-form__input-btn">
+                  Ананасы
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Шампиньоны">
+                <div class="popup-form__input-btn">
+                  Шампиньоны
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Лук">
+                <div class="popup-form__input-btn">
+                  Лук
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Перец халапеньо">
+                <div class="popup-form__input-btn">
+                  Перец халапеньо
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Орегано">
+                <div class="popup-form__input-btn">
+                  Орегано
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Зеленый перец">
+                <div class="popup-form__input-btn">
+                  Зеленый перец
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Томаты">
+                <div class="popup-form__input-btn">
+                  Томаты
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Чеснок">
+                <div class="popup-form__input-btn">
+                  Чеснок
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Красный перец">
+                <div class="popup-form__input-btn">
+                  Красный перец
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Оливки">
+                <div class="popup-form__input-btn">
+                  Оливки
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Маслины">
+                <div class="popup-form__input-btn">
+                  Маслины
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Клубника">
+                <div class="popup-form__input-btn">
+                  Клубника
+                </div>
+              </label>
+              <label class="popup-form__label">
+                <input type="checkbox" class="popup-form__input" name="main" value="Смесь итальянских трав">
+                <div class="popup-form__input-btn">
+                  Смесь итальянских трав
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+        </div>
+
+        <div class="popup-form__btns-wrapper">
+          <button class="popup-form__btn popup-form__btn--rst" type="reset">Сбросить</button>
+          <button class="popup-form__btn popup-form__btn--sbmt" type="submit">Применить</button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+  <header class="header">
+    <div class="header-top header__header-top">
+      <div class="wrapper header-top__wrapper">
+        <div class="location header-top__location">
+          <span class="location__now-place">
+            Москва
+            <span class="location__chevron-icon">
+              <svg width="12" height="12">
+                <use xlink:href="./assets/icons/chevron-down.svg#chevron-down"></use>
+              </svg>
+            </span>
+          </span>
+          <div class="location-menu location__location-menu">
+            <button class="location-menu__btn">Казань</button>
+            <button class="location-menu__btn">Санкт-Петербург</button>
+          </div>
+        </div>
+        <a href="#" class="header-top__link">
+          Проверить адрес
+        </a>
+        <span class="time-stamp header-top__time-stamp">
+          Среднее время доставки*: <span class="time-stamp__time">00:24:19</span>
+        </span>
+        <span class="header-top__daily">
+          Время работы: с 11:00 до 23:00
+        </span>
+        <button class="header-top__login-link">
+          Войти в аккаунт
+        </button>
+      </div>
+    </div>
+    <div class="header-bottom header__header-bottom">
+      <div class="wrapper header-bottom__wrapper">
+        <a href="#" class="logo-link header-bottom__logo-link">
+          <span class="logo-link__logo">
+            <svg width="32" height="32">
+              <use xlink:href="./assets/img/logo-link.svg#logo-link"></use>
+            </svg>
+          </span>
+          <span class="logo-link__name">Куда пицца</span>
+        </a>
+        <button class="card-btn header-bottom__card-btn"><span class="card-btn__value">0</span> ₽</button>
+      </div>
+    </div>
+
+  </header>
+  <main class="main">
+    <section class="navigation">
+      <div class="wrapper navigation__wrapper">
+        <nav class="navigation__nav">
+          <a href="#" class="navigation__nav-link navigation-nav-link hvr-float-shadow">
+            <span class="navigation-nav-link__icon">
+              <svg width="32" height="32">
+                <use xlink:href="./assets/icons/fire-icon.svg#fire-icon "></use>
+              </svg>
+            </span>
+            <span class="navigation-nav-link__label">Акции</span>
+          </a>
+          <a href="#" class="navigation__nav-link navigation-nav-link hvr-float-shadow">
+            <span class="navigation-nav-link__icon">
+              <svg width="32" height="32">
+                <use xlink:href="./assets/icons/pizza-icon.svg#pizza-icon"></use>
+              </svg>
+            </span>
+            <span class="navigation-nav-link__label">Пицца</span>
+          </a>
+          <a href="#" class="navigation__nav-link navigation-nav-link hvr-float-shadow">
+            <span class="navigation-nav-link__icon">
+              <svg width="32" height="32">
+                <use xlink:href="./assets/icons/sushi-icon.svg#sushi-icon"></use>
+              </svg>
+            </span>
+            <span class="navigation-nav-link__label">Суши</span>
+          </a>
+          <a href="#" class="navigation__nav-link navigation-nav-link hvr-float-shadow">
+            <span class="navigation-nav-link__icon">
+              <svg width="32" height="32">
+                <use xlink:href="./assets/icons/drinks-icon.svg#drinks-icon"></use>
+              </svg>
+            </span>
+            <span class="navigation-nav-link__label">Напитки</span>
+          </a>
+          <a href="#" class="navigation__nav-link navigation-nav-link hvr-float-shadow">
+            <span class="navigation-nav-link__icon">
+              <svg width="32" height="32">
+                <use xlink:href="./assets/icons/snacks-icon.svg#snacks-icon"></use>
+              </svg>
+            </span>
+            <span class="navigation-nav-link__label">Закуски</span>
+          </a>
+          <a href="#" class="navigation__nav-link navigation-nav-link hvr-float-shadow">
+            <span class="navigation-nav-link__icon">
+              <svg width="32" height="32">
+                <use xlink:href="./assets/icons/combo-icon.svg#combo-icon"></use>
+              </svg>
+            </span>
+            <span class="navigation-nav-link__label">Комбо</span>
+          </a>
+          <a href="#" class="navigation__nav-link navigation-nav-link hvr-float-shadow">
+            <span class="navigation-nav-link__icon">
+              <svg width="32" height="32">
+                <use xlink:href="./assets/icons/deserts-icon.svg#deserts-icon"></use>
+              </svg>
+            </span>
+            <span class="navigation-nav-link__label">Десерты</span>
+          </a>
+          <a href="#" class="navigation__nav-link navigation-nav-link hvr-float-shadow">
+            <span class="navigation-nav-link__icon">
+              <svg width="32" height="32">
+                <use xlink:href="./assets/icons/sauce-icon.svg#sauce-icon"></use>
+              </svg>
+            </span>
+            <span class="navigation-nav-link__label">Соусы</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+    <section class="adv">
+      <div class="wrapper adv__wrapper">
+        <div class="adv__list">
+          <article class="adv__item">
+            <img src="./assets/img/adv1.jpg" alt="Pizza image." class="adv__item-img">
+            <h3 class="adv__item-heading">3 средние пиццы
+              от 999 рублей</h3>
+          </article>
+          <article class="adv__item">
+            <img src="./assets/img/adv2.jpg" alt="Pizza image." class="adv__item-img">
+            <h3 class="adv__item-heading">3 средние пиццы
+              от 999 рублей</h3>
+          </article>
+          <article class="adv__item">
+            <img src="./assets/img/adv1.jpg" alt="Pizza image." class="adv__item-img">
+            <h3 class="adv__item-heading">3 средние пиццы
+              от 999 рублей</h3>
+          </article>
+          <article class="adv__item">
+            <img src="./assets/img/adv2.jpg" alt="Pizza image." class="adv__item-img">
+            <h3 class="adv__item-heading">3 средние пиццы
+              от 999 рублей</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="address">
+      <div class="wrapper address__wrapper">
+        <form class="address__form address-form">
+          <label for="" class="address-form__label" for="addresss-form-label">Проверить адрес доставки</label>
+          <input type="text" class="address-form__input" id="addresss-form-label" placeholder="Адрес">
+          <button class="address-form__submit-btn">Проверить</button>
+        </form>
+      </div>
+    </section>
+    <section class="catalog">
+      <section class="pizzas">
+        <div class="wrapper catalog__wrapper">
+          <div class="heading-field pizzas__heading-field">
+            <h2 class="subheading heading-field__heading">Пицца</h2>
+            <button class="heading-field__filter-btn" id="pizzas__filter-btn">Фильтры</button>
+          </div>
+          <ul class="catalog-list pizzas__list">
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/pizza1.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Чикен Сладкий Чили</h3>
+                <p class="catalog-list-card__description">Курица, Лук, Перец Халапеньо, Сыр Моцарелла, Томатный соу...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">399</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/pizza2.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">EASY PEASY огуречный расколбас</h3>
+                <p class="catalog-list-card__description">Курица, Лук, Перец Халапеньо...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">549</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/pizza3.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">EASY PEASY чикен а-ля хрен</h3>
+                <p class="catalog-list-card__description">Курица, Лук, Соус Карбонара,...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">249</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/pizza4.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">4 сезона</h3>
+                <p class="catalog-list-card__description">Бекон, Ветчина, Грибы, Курица, Лук, Маслины, Огурцы мари...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">630</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/pizza4.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">4 сезона</h3>
+                <p class="catalog-list-card__description">Бекон, Ветчина, Грибы, Курица, Лук, Маслины, Огурцы мари...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">630</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/pizza3.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">EASY PEASY чикен а-ля хрен</h3>
+                <p class="catalog-list-card__description">Курица, Лук, Соус Карбонара,...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">249</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/pizza1.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Чикен Сладкий Чили</h3>
+                <p class="catalog-list-card__description">Курица, Лук, Перец Халапеньо, Сыр Моцарелла, Томатный соу...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">399</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/pizza2.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">EASY PEASY огуречный расколбас</h3>
+                <p class="catalog-list-card__description">Курица, Лук, Перец Халапеньо...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">549</span> ₽</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="sushi">
+        <div class="wrapper catalog__wrapper">
+          <div class="heading-field sushi__heading-field">
+            <h2 class="subheading heading-field__heading">Суши</h2>
+            <button class="heading-field__filter-btn" id="pizzas__filter-btn">Фильтры</button>
+          </div>
+          <ul class="catalog-list sushi__list">
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sushi1.jpg" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия кранч</h3>
+                <p class="catalog-list-card__description">Семга, рис, сыр креметто, соус унаги, креветка, авокадо,
+                  чип...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">475</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sushi2.jpg" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия крем-брюле</h3>
+                <p class="catalog-list-card__description">Сливочный сыр, семга татаки с тростниковым сахаром, соус у...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">395</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sushi3.jpg" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Супер Филадельфия</h3>
+                <p class="catalog-list-card__description">Действительно много семги, сливочный сыр, огурец, рис, н...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">425</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sushi4.jpg" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Тигр мама</h3>
+                <p class="catalog-list-card__description">Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">525</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sushi4.jpg" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Тигр мама</h3>
+                <p class="catalog-list-card__description">Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">525</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sushi3.jpg" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Супер Филадельфия</h3>
+                <p class="catalog-list-card__description">Действительно много семги, сливочный сыр, огурец, рис, н...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">425</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sushi1.jpg" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия кранч</h3>
+                <p class="catalog-list-card__description">Семга, рис, сыр креметто, соус унаги, креветка, авокадо,
+                  чип...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">475</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sushi2.jpg" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия крем-брюле</h3>
+                <p class="catalog-list-card__description">Сливочный сыр, семга татаки с тростниковым сахаром, соус у...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">395</span> ₽</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="snacks">
+        <div class="wrapper catalog__wrapper">
+          <div class="heading-field snacks__heading-field">
+            <h2 class="subheading heading-field__heading">Закуски</h2>
+            <button class="heading-field__filter-btn" id="pizzas__filter-btn">Фильтры</button>
+          </div>
+          <ul class="catalog-list snacks__list">
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/snack1.png" alt="French fries." class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия кранч</h3>
+                <p class="catalog-list-card__description">Семга, рис, сыр креметто, соус унаги, креветка, авокадо,
+                  чип...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">475</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/snack2.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия крем-брюле</h3>
+                <p class="catalog-list-card__description">Сливочный сыр, семга татаки с тростниковым сахаром, соус у...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">395</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/snack3.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Супер Филадельфия</h3>
+                <p class="catalog-list-card__description">Действительно много семги, сливочный сыр, огурец, рис, н...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">425</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/snack4.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Тигр мама</h3>
+                <p class="catalog-list-card__description">Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">525</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/snack4.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Тигр мама</h3>
+                <p class="catalog-list-card__description">Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">525</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/snack3.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Супер Филадельфия</h3>
+                <p class="catalog-list-card__description">Действительно много семги, сливочный сыр, огурец, рис, н...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">425</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/pizza1.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия кранч</h3>
+                <p class="catalog-list-card__description">Семга, рис, сыр креметто, соус унаги, креветка, авокадо,
+                  чип...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">475</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/pizza1.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия крем-брюле</h3>
+                <p class="catalog-list-card__description">Сливочный сыр, семга татаки с тростниковым сахаром, соус у...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">395</span> ₽</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="deserts">
+        <div class="wrapper catalog__wrapper">
+          <div class="heading-field deserts__heading-field">
+            <h2 class="subheading heading-field__heading">Десерты</h2>
+            <button class="heading-field__filter-btn" id="pizzas__filter-btn">Фильтры</button>
+          </div>
+          <ul class="catalog-list deserts__list">
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/desert1.png" alt="French fries." class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия кранч</h3>
+                <p class="catalog-list-card__description">Семга, рис, сыр креметто, соус унаги, креветка, авокадо,
+                  чип...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">475</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/desert2.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия крем-брюле</h3>
+                <p class="catalog-list-card__description">Сливочный сыр, семга татаки с тростниковым сахаром, соус у...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">395</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/desert3.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Супер Филадельфия</h3>
+                <p class="catalog-list-card__description">Действительно много семги, сливочный сыр, огурец, рис, н...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">425</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/desert4.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Тигр мама</h3>
+                <p class="catalog-list-card__description">Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">525</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/desert4.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Тигр мама</h3>
+                <p class="catalog-list-card__description">Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">525</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/desert5.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Супер Филадельфия</h3>
+                <p class="catalog-list-card__description">Действительно много семги, сливочный сыр, огурец, рис, н...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">425</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/desert6.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия кранч</h3>
+                <p class="catalog-list-card__description">Семга, рис, сыр креметто, соус унаги, креветка, авокадо,
+                  чип...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">475</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/desert3.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия крем-брюле</h3>
+                <p class="catalog-list-card__description">Сливочный сыр, семга татаки с тростниковым сахаром, соус у...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">395</span> ₽</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="drinks">
+        <div class="wrapper catalog__wrapper">
+          <div class="heading-field drinks__heading-field">
+            <h2 class="subheading heading-field__heading">Напитки</h2>
+            <button class="heading-field__filter-btn" id="pizzas__filter-btn">Фильтры</button>
+          </div>
+          <ul class="catalog-list drinks__list">
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/drink1.png" alt="French fries." class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия кранч</h3>
+                <p class="catalog-list-card__description">Семга, рис, сыр креметто, соус унаги, креветка, авокадо,
+                  чип...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">475</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/drink2.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия крем-брюле</h3>
+                <p class="catalog-list-card__description">Сливочный сыр, семга татаки с тростниковым сахаром, соус у...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">395</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/drink3.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Супер Филадельфия</h3>
+                <p class="catalog-list-card__description">Действительно много семги, сливочный сыр, огурец, рис, н...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">425</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/drink4.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Тигр мама</h3>
+                <p class="catalog-list-card__description">Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">525</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/drink5.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Тигр мама</h3>
+                <p class="catalog-list-card__description">Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">525</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/drink6.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Супер Филадельфия</h3>
+                <p class="catalog-list-card__description">Действительно много семги, сливочный сыр, огурец, рис, н...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">425</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/drink7.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия кранч</h3>
+                <p class="catalog-list-card__description">Семга, рис, сыр креметто, соус унаги, креветка, авокадо,
+                  чип...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">475</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/drink2.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия крем-брюле</h3>
+                <p class="catalog-list-card__description">Сливочный сыр, семга татаки с тростниковым сахаром, соус у...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">395</span> ₽</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="sauces">
+        <div class="wrapper catalog__wrapper">
+          <div class="heading-field sauces__heading-field">
+            <h2 class="subheading heading-field__heading">Соусы</h2>
+            <button class="heading-field__filter-btn" id="pizzas__filter-btn">Фильтры</button>
+          </div>
+          <ul class="catalog-list sauces__list">
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sauce1.png" alt="French fries." class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия кранч</h3>
+                <p class="catalog-list-card__description">Семга, рис, сыр креметто, соус унаги, креветка, авокадо,
+                  чип...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">475</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sauce2.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия крем-брюле</h3>
+                <p class="catalog-list-card__description">Сливочный сыр, семга татаки с тростниковым сахаром, соус у...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">395</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sauce3.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Супер Филадельфия</h3>
+                <p class="catalog-list-card__description">Действительно много семги, сливочный сыр, огурец, рис, н...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">425</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sauce4.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Тигр мама</h3>
+                <p class="catalog-list-card__description">Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">525</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sauce2.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Тигр мама</h3>
+                <p class="catalog-list-card__description">Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">525</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sauce4.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Супер Филадельфия</h3>
+                <p class="catalog-list-card__description">Действительно много семги, сливочный сыр, огурец, рис, н...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">425</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sauce3.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия кранч</h3>
+                <p class="catalog-list-card__description">Семга, рис, сыр креметто, соус унаги, креветка, авокадо,
+                  чип...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">475</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/sauce1.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия крем-брюле</h3>
+                <p class="catalog-list-card__description">Сливочный сыр, семга татаки с тростниковым сахаром, соус у...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">395</span> ₽</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="combo">
+        <div class="wrapper catalog__wrapper">
+          <div class="heading-field combo__heading-field">
+            <h2 class="subheading heading-field__heading">Комбо</h2>
+            <button class="heading-field__filter-btn" id="pizzas__filter-btn">Фильтры</button>
+          </div>
+          <ul class="catalog-list combo__list">
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/combo1.png" alt="French fries." class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия кранч</h3>
+                <p class="catalog-list-card__description">Семга, рис, сыр креметто, соус унаги, креветка, авокадо,
+                  чип...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">475</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/combo2.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия крем-брюле</h3>
+                <p class="catalog-list-card__description">Сливочный сыр, семга татаки с тростниковым сахаром, соус у...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">395</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/combo3.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Супер Филадельфия</h3>
+                <p class="catalog-list-card__description">Действительно много семги, сливочный сыр, огурец, рис, н...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">425</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/combo4.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Тигр мама</h3>
+                <p class="catalog-list-card__description">Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">525</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/combo2.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Тигр мама</h3>
+                <p class="catalog-list-card__description">Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">525</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/combo1.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Супер Филадельфия</h3>
+                <p class="catalog-list-card__description">Действительно много семги, сливочный сыр, огурец, рис, н...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">425</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/combo4.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия кранч</h3>
+                <p class="catalog-list-card__description">Семга, рис, сыр креметто, соус унаги, креветка, авокадо,
+                  чип...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">475</span> ₽</span>
+                </div>
+              </div>
+            </li>
+            <li class="catalog-list-card catalog-list__card">
+              <div class="catalog-list-card__label">New</div>
+              <div class="catalog-list-card__img-holder">
+                <img src="./assets/img/combo3.png" alt="Chicken sweet chilly" class="catalog-list-card__img">
+              </div>
+              <div class="catalog-list-card__body">
+                <h3 class="catalog-list-card__heading">Филадельфия крем-брюле</h3>
+                <p class="catalog-list-card__description">Сливочный сыр, семга татаки с тростниковым сахаром, соус у...
+                </p>
+                <div class="catalog-list-card__menu">
+                  <button class="catalog-list-card__btn">Выбрать</button>
+                  <span class="catalog-list-card__price">от <span class="catalog-list-card__value">395</span> ₽</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </section>
+    <section class="delivery">
+      <div class="wrapper delivery__wrapper">
+        <h2 class="delivery__heading">Доставка пиццы в Москве</h2>
+        <p class="delivery__description">Захотелось чего-то вкусного и сытного? Желание простое и понятное, только в холодильнике все не то, и до магазина идти
+        лень. Все пропало? Нет. Недорого заказать пиццу в Москве очень просто! Вам на помощь спешит супергерой – Domino’s Pizza!
+        Как у всякого супергероя, у Domino’s Pizza есть свои суперсилы: восхитительный вкус продукции из отборных ингредиентов;
+        широкий ассортимент, включающий легендарные, фирменные и классические виды, для вегетарианцев и любителей
+        экспериментировать; быстрая и бесплатная доставка пиццы в течение 30 минут, чтобы вкусное и ароматное блюдо не успевало
+        остыть.
+        
+        Как сделать заказ
+        Доставка пиццы от Domino’s – это когда Вам не нужно никуда ехать или звонить, ведь есть Интернет. Никогда еще заказ
+        пиццы на дом в Москве не был таким простым! Чтобы заказать пиццу онлайн, Вам необходимо: выбрать понравившийся вариант и
+        количество порций; положить желаемое в «Корзину»; не уходить далеко, так как вкусная пицца на заказ с доставкой уже
+        мчится к Вам из ближайшей пиццерии Domino’s. И не забудьте оплатить заказ курьеру!</p>
+        <button class="delivery__btn" type="button">Показать полностью</button>
+      </div>
+    </section>
+  </main>
+
+
+  <script src="./scripts/popup.js"></script>
+</body>
+
+</html>

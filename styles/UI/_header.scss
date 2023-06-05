@@ -1,0 +1,192 @@
+.header {
+	width: 100%;
+	background-color: $headerBg;
+
+	&__header-top {
+	}
+
+	&__header-bottom {
+	}
+}
+.header-top {
+	width: 100%;
+	height: 40px;
+
+	&__wrapper {
+		gap: 40px;
+	}
+
+	&__location {
+	}
+
+	&__link {
+		font-family: $mainFont;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 18px;
+		display: flex;
+		align-items: center;
+		text-align: right;
+		color: $textColor;
+	}
+
+	&__time-stamp {
+		margin-right: auto;
+	}
+
+	&__daily {
+		font-family: $mainFont;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 18px;
+		color: $textColor;
+	}
+
+	&__login-link {
+		padding-left: 28px;
+		background-color: transparent;
+		border: none;
+		font-family: $mainFont;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 20px;
+		text-align: right;
+		color: $textColor;
+		background-image: url("../assets/icons/user-icon.svg");
+		background-repeat: no-repeat;
+		background-position: center left;
+	}
+}
+
+.location-menu {
+	min-width: 100%;
+	background-color: #ffffff;
+	position: absolute;
+	left: 28px;
+	top: 100%;
+	z-index: 10;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.13s;
+
+	&__btn {
+		width: 100%;
+		padding: 10px 15px;
+		font-size: 11px;
+		line-height: 1;
+		font-weight: 500;
+		background: none;
+		border: none;
+		text-align: left;
+		border-bottom: 1px solid $grey;
+		@include click();
+		&:hover {
+			background-color: $grey;
+			cursor: pointer;
+		}
+	}
+}
+
+.location {
+	position: relative;
+	padding-left: 28px;
+	background-image: url("../assets/icons/location.svg");
+	background-repeat: no-repeat;
+	background-position: center left;
+	background-size: contain;
+	&:hover .location__chevron-icon svg {
+		transform: rotate(180deg);
+	}
+	&:hover {
+		.location__location-menu {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	&__now-place {
+		font-family: $mainFont;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 20px;
+		color: $textColor;
+	}
+	&__chevron-icon {
+		vertical-align: middle;
+		margin-left: 8px;
+		svg {
+			transition: 0.13s;
+		}
+	}
+}
+.time-stamp {
+	font-family: $mainFont;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 18px;
+	align-items: center;
+	text-align: right;
+	color: $textColor;
+	&__time {
+		font-family: $mainFont;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 18px;
+		align-items: center;
+		text-align: right;
+		color: $textColor;
+	}
+}
+.header-bottom {
+	height: 64px;
+	border-bottom: 1px solid $grey;
+	border-top: 1px solid $grey;
+	&__wrapper {
+		justify-content: space-between;
+	}
+
+	&__logo-link {
+	}
+
+	&__card-btn {
+	}
+}
+.logo-link {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-family: $mainFont;
+	font-size: 18px;
+	line-height: 1;
+	color: $textColor;
+	font-weight: 400;
+
+	&__logo {
+	}
+
+	&__name {
+	}
+}
+.card-btn {
+	padding: 9px 16px 9px 48px;
+	background: #ff7010;
+	border-radius: 4px;
+	border: none;
+	font-family: $addFont;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	text-align: center;
+	color: #ffffff;
+	background-image: url("../assets/icons/basket-icon.svg");
+	background-repeat: no-repeat;
+	background-position: left 16px center;
+	&__value {
+	}
+}

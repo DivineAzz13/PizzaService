@@ -1,0 +1,42 @@
+.navigation {
+	margin: 30px 0px;
+
+	&__wrapper {
+	}
+
+	&__nav {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		gap: 30px;
+	}
+
+	&__nav-link {
+	}
+}
+
+.navigation-nav-link {
+	width: 100%;
+	min-height: 104px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	gap: 8px;
+	font-family: $addFont;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 24px;
+	text-align: center;
+	color: $textColor;
+	background: #ffffff;
+	border: 1px solid #f0f0f0;
+	border-radius: 12px;
+
+	&__icon {
+	}
+
+	&__label {
+	}
+}

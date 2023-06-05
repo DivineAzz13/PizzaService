@@ -1,0 +1,278 @@
+@import "./utils/font";
+@import "./utils/reset";
+@import url("./utils/hvr.css");
+
+$mainFont: "Inter", sans-serif;
+$addFont: "SF Pro Display", sans-serif;
+
+$brandColor: #ff7010;
+$red: #e23535;
+$textColor: #191919;
+$bgColor: #f9f9f9;
+$grey: #f0f0f0;
+$greyText: #a5a5a5;
+$headerBg: #ffffff;
+$white: #ffffff;
+
+$defaultTransitionTime: 0.13s;
+$defaultTimingFunc: linear;
+
+@import "./utils/mixins";
+
+body {
+	font-family: $mainFont;
+	background-color: $bgColor;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+@import "./UI/popup";
+
+.wrapper {
+	width: 100%;
+	max-width: 1290px + 20px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+	@media (max-width: 1280px) {
+		padding: 0 15px;
+	}
+	@media (max-width: 1024px) {
+		padding: 0 20px;
+	}
+}
+
+.subheading {
+	font-family: $mainFont;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 40px;
+	line-height: 48px;
+	color: $textColor;
+}
+
+@import "./UI/header";
+
+@import "./UI/navigation";
+
+.adv {
+	&__wrapper {
+	}
+
+	&__list {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		gap: 30px;
+	}
+
+	&__item {
+		position: relative;
+		width: 100%;
+		min-height: 343px;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+	}
+
+	&__item-img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		object-fit: cover;
+		border-radius: 12px;
+	}
+
+	&__item-heading {
+		z-index: 1;
+		font-family: $mainFont;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 28px;
+		color: $white;
+		max-width: 240px;
+	}
+}
+
+@import "./UI/address-form";
+
+@import "./UI/heading-field";
+
+.catalog {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+
+	&__wrapper {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+.catalog-list {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(270px, 300px));
+	gap: 30px;
+
+	&__card {
+	}
+}
+.catalog-list-card {
+	width: 100%;
+	max-width: 300px;
+	position: relative;
+	background: #FFFFFF;
+	border: 1px solid $grey;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&__label {
+		position: absolute;
+		padding: 7px 16px;
+		left: 0;
+		top: 20px;
+		background-color: $red;
+		font-family: $mainFont;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 18px;
+		color: $white;
+		border-radius: 0 5px 5px 0;
+
+	}
+
+	&__img-holder {
+		width: 100%;
+		max-width: 300px;
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: contain;
+	}
+
+	&__body {
+		width: 100%;
+		padding: 16px 20px 20px 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		background-color: $white;
+		gap: 12px;
+		min-height: 182px;
+
+	}
+
+	&__heading {
+		font-family: $addFont;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 24px;
+		color: $textColor;
+
+	}
+
+	&__description {
+		font-family: $addFont;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 22px;
+		color: #191919;
+		margin-bottom: 4px;
+
+	}
+
+	&__menu {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: auto;
+
+	}
+
+	&__btn {
+		border: none;
+		background-color: $brandColor;
+		padding: 13px 32px;
+		font-family: $addFont;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 22px;
+		color: #FFFFFF;
+		border-radius: 6px;
+		}
+
+	&__price {
+		font-family: $addFont;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 24px;
+		color: $brandColor;
+	}
+
+	&__value {
+	}
+}
+
+
+// DELIVERY 
+
+.delivery {
+
+		&__wrapper {
+			flex-direction: column;
+			align-items: center;
+			gap: 16px;
+			max-width: 850px;
+		}
+
+		&__heading {
+			font-family: $mainFont;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 32px;
+			line-height: 40px;
+			color: $textColor;
+		}
+
+		&__description {
+			font-family: $addFont;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 22px;
+			}
+
+		&__btn {
+			align-self: flex-start;
+			background-color: transparent;
+			border: none;
+			color: $brandColor;
+			font-family: $mainFont;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 20px;
+		}
+}
+
